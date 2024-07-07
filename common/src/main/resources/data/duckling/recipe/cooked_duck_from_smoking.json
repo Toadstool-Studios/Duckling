@@ -5,5 +5,7 @@
   "ingredient": {
     "item": "duckling:raw_duck"
   },
-  "result": "duckling:cooked_duck"
+  "result": {
+    "id": "duckling:cooked_duck"
+  }
 }

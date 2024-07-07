@@ -9,7 +9,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.loading.FMLLoader;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
-import net.neoforged.neoforge.event.entity.SpawnPlacementRegisterEvent;
+import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import tech.thatgravyboat.duckling.Duckling;
 import tech.thatgravyboat.duckling.common.registry.ModSpawns;
 
@@ -36,11 +36,11 @@ public class DucklingNeoForge {
         event.enqueueWork(Duckling::lateInit);
     }
 
-    public void onSpawnPlacement(SpawnPlacementRegisterEvent event) {
+    public void onSpawnPlacement(RegisterSpawnPlacementsEvent event) {
         ModSpawns.addSpawnRules(new ModSpawns.SpawnRegistrar() {
             @Override
             public <T extends Mob> void register(EntityType<T> entityType, SpawnPlacementType spawnPlacementType, Heightmap.Types types, SpawnPlacements.SpawnPredicate<T> spawnPredicate) {
-                event.register(entityType, spawnPlacementType, types, spawnPredicate, SpawnPlacementRegisterEvent.Operation.OR);
+                event.register(entityType, spawnPlacementType, types, spawnPredicate, RegisterSpawnPlacementsEvent.Operation.OR);
             }
         });
     }

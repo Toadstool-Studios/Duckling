@@ -16,7 +16,7 @@ Note: Sounds were edited out and pitched up and down."""
 [[dependencies.vanity]]
     modId = "neoforge"
     type="required"
-    versionRange = "[20.5,)"
+    versionRange = "[21.0.75-beta,)"
     ordering = "AFTER"
     side = "BOTH"
 
